@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadvik Vardha - Frontend Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* * A more custom, hand-crafted feel.
+         * Fonts: Lora for headings, Source Sans 3 for body text.
+         * Colors: A softer palette with 'cultured' white, 'onyx' black, and a 'slate gray' accent.
+        */
+        body {
+            background-color: #F7F7F7; /* Cultured White */
+            color: #363945; /* Onyx */
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+        }
+        .section-title {
+            @apply text-4xl font-bold mb-12;
+        }
+
+        /* Subtle underline effect for nav links */
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #52616B; /* Slate Gray */
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Custom animation for revealing elements on scroll */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Project Card Styling */
+        .project-card .card-image {
+            transition: transform 0.4s ease;
+        }
+        .project-card:hover .card-image {
+            transform: scale(1.05);
+        }
+        .project-card .card-overlay {
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .project-card:hover .card-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="text-2xl font-bold tracking-wider">SV.</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-lg">About</a>
+                    <a href="#experience" class="nav-link text-lg">Experience</a>
+                    <a href="#projects" class="nav-link text-lg">Projects</a>
+                    <a href="#contact" class="nav-link text-lg">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#about" class="block py-3 px-6 text-lg hover:bg-gray-100">About</a>
+            <a href="#experience" class="block py-3 px-6 text-lg hover:bg-gray-100">Experience</a>
+            <a href="#projects" class="block py-3 px-6 text-lg hover:bg-gray-100">Projects</a>
+            <a href="#contact" class="block py-3 px-6 text-lg hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center px-6 pt-24 pb-12">
+            <div class="container mx-auto">
+                <div class="max-w-4xl">
+                    <p class="text-xl md:text-2xl text-gray-600 mb-2 reveal-on-scroll">Hi, my name is</p>
+                    <h1 class="text-5xl md:text-7xl font-bold text-slate-800 mb-4 reveal-on-scroll" style="transition-delay: 100ms;">Sadvik Vardha.</h1>
+                    <h2 class="text-4xl md:text-6xl font-bold text-gray-500 mb-8 reveal-on-scroll" style="transition-delay: 200ms;">I build things for the web.</h2>
+                    <p class="max-w-2xl text-lg text-gray-700 mb-10 reveal-on-scroll" style="transition-delay: 300ms;">
+                        I’m a frontend developer specializing in building clean, responsive, and user-friendly websites. Currently focused on mastering the art of HTML & CSS to create beautiful digital experiences.
+                    </p>
+                    <div class="reveal-on-scroll" style="transition-delay: 400ms;">
+                        <a href="mailto:sadvikvardha0112@gmail.com" class="bg-[#52616B] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#3E4A52] transition-colors duration-300">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-28 px-6">
+            <div class="container mx-auto">
+                <h2 class="section-title reveal-on-scroll">About Me</h2>
+                <div class="grid md:grid-cols-5 gap-10 items-center">
+                    <div class="md:col-span-3 text-lg space-y-4 text-gray-700 reveal-on-scroll">
+                        <p>Hello! I'm Sadvik, a developer based in Hyderabad, India. My journey into web development began with a fascination for how creative ideas can be transformed into functional, elegant web pages that people can interact with.</p>
+                        <p>I am currently a 3rd-year B.Tech student in AI & Data Science at BVRIT Hyderabad, which gives me a unique perspective on blending analytical thinking with creative design.</p>
+                        <p>Here are a few technologies I’ve been working with recently:</p>
+                        <ul class="grid grid-cols-2 gap-2 mt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-caret-right text-[#52616B]"></i> HTML & CSS</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-caret-right text-[#52616B]"></i> JavaScript</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-caret-right text-[#52616B]"></i> Python</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-caret-right text-[#52616B]"></i> Artificial Intelligence</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-2 reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div class="relative w-full max-w-sm mx-auto">
+                            <div class="absolute top-0 left-0 w-full h-full border-2 border-gray-700 rounded-lg transform translate-x-4 translate-y-4"></div>
+                            <img src="https://placehold.co/400x400/363945/F7F7F7?text=Sadvik" alt="Sadvik Vardha" class="relative rounded-lg w-full z-10">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="py-28 px-6 bg-white">
+            <div class="container mx-auto">
+                <h2 class="section-title text-center reveal-on-scroll">Where I've Worked & Learned</h2>
+                <div class="max-w-2xl mx-auto mt-12 space-y-8">
+                    <div class="flex gap-6 reveal-on-scroll">
+                        <div class="text-2xl text-[#52616B] mt-1"><i class="fa-solid fa-briefcase"></i></div>
+                        <div>
+                            <p class="text-gray-500">May 2025 – July 2025</p>
+                            <h3 class="text-xl font-bold">Frontend Intern @ Viswam.AI</h3>
+                            <p class="text-gray-600 mt-1">Gained hands-on experience in frontend development during the Summer of AI internship program.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 reveal-on-scroll">
+                        <div class="text-2xl text-[#52616B] mt-1"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div>
+                            <h3 class="text-xl font-bold">Infosys Springboard Virtual Internship 6.0</h3>
+                            <p class="text-gray-600 mt-1">Selected as a participant to learn and apply industry-relevant skills in a virtual environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-28 px-6">
+            <div class="container mx-auto">
+                <h2 class="section-title text-center reveal-on-scroll">Some Things I've Built</h2>
+                <div class="max-w-3xl mx-auto mt-12 space-y-12">
+                    <!-- Project 1 -->
+                    <div class="reveal-on-scroll">
+                        <h3 class="text-3xl font-bold underline decoration-slate-400 decoration-2 underline-offset-8">Plant Disease Detection Using ML</h3>
+                        <p class="text-gray-700 mt-4 text-lg">A machine learning model to help detect plant diseases, contributing to early intervention in agriculture. Won 1st place at the IIT Hyderabad Hackathon.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-200 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="reveal-on-scroll" style="transition-delay: 100ms;">
+                        <h3 class="text-3xl font-bold underline decoration-slate-400 decoration-2 underline-offset-8">Nike Air Shoes Website Clone</h3>
+                        <p class="text-gray-700 mt-4 text-lg">A pixel-perfect, responsive clone of the Nike Air Shoes landing page, built to practice and showcase my HTML and CSS skills.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full">HTML</span>
+                            <span class="bg-gray-200 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-28 px-6 text-center bg-white">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-gray-500 reveal-on-scroll">What's Next?</h2>
+                <h3 class="text-5xl font-bold mt-4 mb-6 reveal-on-scroll">Let's Connect</h3>
+                <p class="max-w-xl mx-auto text-lg text-gray-700 mb-10 reveal-on-scroll">
+                    I'm currently seeking new opportunities and am always open to a conversation. Whether you have a question or just want to say hi, I'll do my best to get back to you!
+                </p>
+                <div class="reveal-on-scroll">
+                    <a href="mailto:sadvikvardha0112@gmail.com" class="border border-[#52616B] text-[#52616B] font-bold py-3 px-8 rounded-lg hover:bg-[#52616B] hover:text-white transition-colors duration-300">Say Hello</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6">
+        <div class="container mx-auto text-center text-gray-500">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://linkedin.com/in/sadvik-vardha-51a722368" target="_blank" rel="noopener noreferrer" class="text-2xl hover:text-[#52616B] transition-colors"><i class="fab fa-linkedin"></i></a>
+                <!-- Add GitHub link when available -->
+            </div>
+            <p>Designed & Built by Sadvik Vardha</p>
+            <p>&copy; 2025 Hyderabad, India</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- This script handles the mobile menu and scroll animations ---
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for revealing elements on scroll
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+                // Optional: remove class when it scrolls out of view
+                // else {
+                //     entry.target.classList.remove('is-visible');
+                // }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Find all elements to reveal and start observing them
+        const elementsToReveal = document.querySelectorAll('.reveal-on-scroll');
+        elementsToReveal.forEach((el) => {
+            scrollObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
